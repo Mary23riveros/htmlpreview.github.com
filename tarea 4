@@ -1,0 +1,379 @@
+<html>
+<head>
+    <style>
+        h1 {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 36px;
+            color: white;
+            background-color: navy;
+        }
+
+        h2 {
+            text-align: center;
+            font-family:Goudy Stout, Helvetica, sans-serif;
+            font-size: 24px;
+            color: purple;
+        }
+       h3 {
+            text-align: center;
+            font-family: Times New Roman, Helvetica, sans-serif;
+            font-size: 20px;
+            color: blue;
+        }
+
+        h4 {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 24px;
+            color: white;
+            background-color: green;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .form {
+            width: 600px;
+            margin: 20px;
+            border: 1px solid purple;
+            padding: 10px;
+        }
+
+        .form p {
+            font-family: Baguet Script, Helvetica, sans-serif;
+            font-size: 18px;
+            color: green;
+        }
+
+        .form input {
+            display: block;
+            width: 100%;
+            margin: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+        }
+
+        .form button {
+            display: block;
+            width: 100%;
+            margin: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            color: white;
+            background-color: navy;
+        }
+
+        .menu {
+            width: 300px;
+            margin: 10px;
+            border: 1px solid gray;
+            padding: 10px;
+        }
+
+        .menu p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            color: black;
+        }
+
+        .menu button {
+            display: block;
+            width: 100%;
+            margin: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            color: white;
+        }
+
+        .menu button.suma {
+            background-color: green;
+        }
+
+        .menu button.resta {
+            background-color: blue;
+        }
+
+        .menu button.multiplicacion {
+            background-color: red;
+        }
+
+        .menu button.division {
+            background-color: orange;
+        }
+
+        .menu button.salir {
+            background-color: black;
+        }
+
+        .juego {
+            width: 300px;
+            margin: 10px;
+            border: 1px solid gray;
+            padding: 10px;
+        }
+
+        .juego p {
+            display: block;
+            width: 100%;
+            margin: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            color: black;
+        }
+
+        .juego input {
+            display: block;
+            width: 100%;
+            margin: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+        }
+
+        .juego button {
+            display: block;
+            width: 100%;
+            margin: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            color: white;
+            background-color: navy;
+        }
+
+        .resultado {
+            width: 300px;
+            margin: 10px;
+            border: 1px solid gray;
+            padding: 10px;
+        }
+
+        .resultado p {
+            display: block;
+            width: 100%;
+            margin: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            color: black;
+        }
+
+        .imagen {
+            width: 300px;
+            height: 200px;
+            margin: 10px;
+        }
+
+        .texto {
+            width: 300px;
+            margin: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            color: black;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aplicación Matemática</h1>
+    <h2>Juegos Matemáticos</h2>
+
+    <div class="container">
+        <div class="form">
+<h4>¿Sabías que? </h4>
+<p1>Las matemáticas son una de las disciplinas más importantes del mundo, ya que nos permiten resolver problemas complejos y tomar decisiones informadas. Desde la antigüedad, las matemáticas han sido un componente fundamental de la educación, y su importancia sigue siendo relevante en la actualidad.</p1>
+            <p>Por favor, llena el formulario de ingreso:</p>
+            <input type="text" id="nombres" placeholder="Nombres">
+            <input type="text" id="apellidos" placeholder="Apellidos">
+            <input type="number" id="edad" placeholder="Edad">
+            <input type="text" id="grado" placeholder="Grado">
+            <button id="continuar">Continuar</button>
+        </div>
+<h1>Aplicación Matemática</h1>
+        <div class="menu" style="display: none;">
+<div class="">
+        <h3>"Las matemáticas son un juego, juega con ellas y descubrirás su belleza."(Anonimo)</h3>
+    </div>
+            <p>*-* Elige el tipo de juego que quieres jugar:</p>
+            <button class="suma">Suma</button>
+            <button class="resta">Resta</button>
+            <button class="multiplicacion">Multiplicación</button>
+            <button class="division">División</button>
+            <button class="salir">Salir</button>
+        </div>
+        <div class="juego" style="display: none;">
+            <p id="pregunta"></p>
+            <input type="number" id="respuesta" placeholder="Respuesta">
+            <button id="enviar">Enviar</button>
+        </div>
+        <div class="resultado" style="display: none;">
+            <p id="correctas"></p>
+            <p id="incorrectas"></p>
+        </div>
+
+<style>
+    .texto {
+        font-family: "Times New Roman", Times, serif; /* Tipo de fuente como de oraciones */
+        color: blue; /* Color de letra Blue */
+
+   
+    }
+    .derecha {
+        float: right; /* Texto alineado a la derecha */
+        margin-left: 10px; /* Margen izquierdo del texto */
+    }
+</style>
+<div class="contenedor">
+    <div class="">
+
+        
+    </div>
+    </div>
+</div>
+
+    </div>
+    <script>
+        // Variables globales
+        var nombres = "";
+        var apellidos = "";
+        var edad = 0;
+        var grado = "";
+        var tipo = "";
+        var contador = 0;
+        var correctas = 0;
+        var incorrectas = 0;
+        var numero1 = 0;
+        var numero2 = 0;
+        var operacion = 0;
+
+
+
+        // Elementos del DOM
+        var form = document.querySelector(".form");
+        var menu = document.querySelector(".menu");
+        var juego = document.querySelector(".juego");
+        var resultado = document.querySelector(".resultado");
+        var continuar = document.getElementById("continuar");
+        var suma = document.querySelector(".suma");
+        var resta = document.querySelector(".resta");
+        var multiplicacion = document.querySelector(".multiplicacion");
+        var division = document.querySelector(".division");
+        var salir = document.querySelector(".salir");
+        var pregunta = document.getElementById("pregunta");
+        var respuesta = document.getElementById("respuesta");
+        var enviar = document.getElementById("enviar");
+        var correctasP = document.getElementById("correctas");
+        var incorrectasP = document.getElementById("incorrectas");
+
+
+        // Funciones auxiliares
+        function generarNumero(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function generarPregunta() {
+            numero1 = generarNumero(1, 10);
+            numero2 = generarNumero(1, 10);
+            if (tipo == "suma") {
+                operacion = numero1 + numero2;
+                pregunta.textContent = "¿Cuánto es " + numero1 + " + " + numero2 + "?";
+            } else if (tipo == "resta") {
+                operacion = numero1 - numero2;
+                pregunta.textContent = "¿Cuánto es " + numero1 + " - " + numero2 + "?";
+            } else if (tipo == "multiplicacion") {
+                operacion = numero1 * numero2;
+                pregunta.textContent = "¿Cuánto es " + numero1 + " x " + numero2 + "?";
+            } else if (tipo == "division") {
+                operacion = numero1 / numero2;
+                pregunta.textContent = "¿Cuánto es " + numero1 + " / " + numero2 + "?";
+            }
+            respuesta.value = "";
+        }
+
+        function verificarRespuesta() {
+            var valor = Number(respuesta.value);
+            if (valor == operacion) {
+                correctas++;
+                alert("¡Correcto!");
+            } else {
+                incorrectas++;
+                alert("¡Incorrecto!");
+            }
+            contador++;
+            if (contador < 10) {
+                generarPregunta();
+            } else {
+                mostrarResultado();
+            }
+        }
+
+        function mostrarResultado() {
+            juego.style.display = "none";
+            resultado.style.display = "block";
+            correctasP.textContent = "Respuestas correctas: " + correctas;
+            incorrectasP.textContent = "Respuestas incorrectas: " + incorrectas;
+        }
+
+        function reiniciarJuego() {
+            contador = 0;
+            correctas = 0;
+            incorrectas = 0;
+            resultado.style.display = "none";
+            menu.style.display = "block";
+        }
+
+        // Eventos
+        continuar.addEventListener("click", function() {
+            nombres = document.getElementById("nombres").value;
+            apellidos = document.getElementById("apellidos").value;
+            edad = Number(document.getElementById("edad").value);
+            grado = document.getElementById("grado").value;
+            if (nombres && apellidos && edad && grado) {
+                form.style.display = "none";
+                menu.style.display = "block";
+            } else {
+                alert("Por favor, completa todos los campos del formulario.");
+            }
+        });
+
+        suma.addEventListener("click", function() {
+            tipo = "suma";
+            menu.style.display = "none";
+            juego.style.display = "block";
+            generarPregunta();
+        });
+
+        resta.addEventListener("click", function() {
+            tipo = "resta";
+            menu.style.display = "none";
+            juego.style.display = "block";
+            generarPregunta();
+        });
+
+        multiplicacion.addEventListener("click", function() {
+            tipo = "multiplicacion";
+            menu.style.display = "none";
+            juego.style.display = "block";
+            generarPregunta();
+        });
+
+        division.addEventListener("click", function() {
+            tipo = "division";
+            menu.style.display = "none";
+            juego.style.display = "block";
+            generarPregunta();
+        });
+
+        salir.addEventListener("click", function() {
+            alert("Gracias por usar la aplicación matemática. ¡Hasta pronto!");
+            window.close();
+        });
+
+        enviar.addEventListener("click", function() {
+            verificarRespuesta();
+        });
+    </script>
+</body>
+</html>
